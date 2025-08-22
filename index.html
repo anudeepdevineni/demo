@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Simple Weather</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Simple Weather</h1>
+
+    <form id="searchForm">
+        <input id="cityInput" type="text" placeholder="Enter city" required>
+        <button type="submit">Get Weather</button>
+    </form>
+
+    <p id="status" class="muted">Type a city and press “Get Weather”.</p>
+
+    <section id="result" class="card" hidden>
+        <h2 id="cityName"></h2>
+        <div class="row">
+            <img id="icon" width="72" height="72" alt="">
+            <div>
+                <div id="temp" class="temp"></div>
+                <div id="desc" class="muted"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="forecast" class="card" hidden>
+        <h3>Next Days</h3>
+        <div id="forecastList" class="days"></div>
+    </section>
+</div>
+
+<script src="logic.js" defer></script>
+</body>
+</html>
