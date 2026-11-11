@@ -7,26 +7,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">
+  <div id="app" class="container">
     <h1>Weather</h1>
     <form id="searchForm">
       <input type="text" id="cityInput" placeholder="Enter city" required>
       <button type="submit">Search</button>
     </form>
 
-    <p id="status" class="muted"></p>
+    <p id="status" class="muted">Type a city and press Search.</p>
 
-    <div id="result">
+    <section id="result" class="card" hidden>
       <h2 id="cityName"></h2>
-      <p id="temp"></p>
-      <p id="desc"></p>
-      <img id="icon" alt="weather icon">
-    </div>
+      <div class="row">
+        <img id="icon" width="72" height="72" alt="">
+        <div>
+          <div id="temp" class="temp"></div>
+          <div id="desc" class="muted"></div>
+        </div>
+      </div>
+    </section>
 
-    <div id="forecast">
+    <section id="forecast" class="card" hidden>
       <h2>Forecast</h2>
-      <ul id="forecastList"></ul>
-    </div>
+      <div id="forecastList" class="days"></div>
+    </section>
   </div>
 
   <script src="script.js" defer></script>

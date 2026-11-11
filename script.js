@@ -1,4 +1,7 @@
-var UNITS   = "metric";
+// Get a free key at https://openweathermap.org/api and paste it here.
+// Anything in this file is visible to anyone who opens the page, so don't reuse a key you care about.
+var API_KEY = "";
+var UNITS   = "metric"; // or "imperial" for °F
 
 var form = document.getElementById("searchForm");
 var input = document.getElementById("cityInput");
@@ -75,7 +78,7 @@ function renderForecast(fc){
 }
 
 function getWeather(city){
-  if (!API_KEY ){ setStatus("Add your OpenWeatherMap API key ", true); return; }
+  if (!API_KEY){ setStatus("Add your OpenWeatherMap API key at the top of script.js.", true); return; }
   if (!city){ setStatus("Please enter a city.", true); return; }
 
   setStatus("Loading…", false);
@@ -98,5 +101,3 @@ function getWeather(city){
 }
 
 form.addEventListener("submit", function(e){ e.preventDefault(); getWeather(input.value.trim()); });
-
-var API_KEY = "66746946cf06a3391cb13a63e61e1c5c";
